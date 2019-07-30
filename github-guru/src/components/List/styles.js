@@ -4,50 +4,56 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+
   margin-top: 50px;
-  height
+`;
+export const Card = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;
+export const Button = styled.button`
+  background: #ffe160;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  margin-left: 0px;
+  margin-right: 15px;
+  width: 20%;
+  align-items: center;
+  justify-content: center;
+  p {
+    display: flex;
+    font-size: 24px;
+  }
 `;
 
-export const Repository = styled.li`
-  width: 250px;
+export const Repository = styled.div`
+  width: 90%;
   background: #fff;
   border-radius: 3px;
   display: flex;
   flex-direction: column;
-  margin: 0 10px;
+  margin: 15px;
+
+  /* padding: 10px; */
   header {
     padding: 30px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     img {
       width: 64px;
     }
     strong {
-      font-size: 24px;
-      margin-top: 10px;
+      font-size: 26px;
+      margin-top: 13px;
       color: #000;
     }
     small {
-      font-size: 14px;
+      font-size: 19px;
       color: #666;
-    }
-  }
-
-  ul {
-    list-style: none;
-    li {
-      font-weight: bold;
-      padding: 12 20px;
-      small {
-        font-weight: normal;
-        font-size: 12px;
-        color: #999;
-        font-style: italic;
-      }
-      &:nth-child(2n-1) {
-        background: #f5f5f5;
-      }
     }
   }
 `;

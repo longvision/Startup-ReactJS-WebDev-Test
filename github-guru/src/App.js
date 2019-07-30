@@ -1,13 +1,22 @@
-import React, { Fragment } from 'react';
 // import styled from 'styled-components';
-import GlobalStyle from './styles/global';
+import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import Container from './styles/global';
+import store from './store';
+// import Main from './pages/Main';
+import Routes from './routes';
+import './config/ReactotronConfig';
 
-import Main from './pages/Main';
+console.tron.log('testando');
 
-const App = () => (
-  <Fragment>
-    <GlobalStyle />
-    <Main />
-  </Fragment>
-);
-export default App;
+export default class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <Container>
+          <Routes />
+        </Container>
+      </Provider>
+    );
+  }
+}

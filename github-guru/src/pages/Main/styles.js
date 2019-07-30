@@ -5,10 +5,17 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 60px;
+  height: 100%;
+  min-height: 1020px;
+  background-color: #48285b;
 `;
 export const Logo = styled.img`
   height: 50px;
 `;
+export const Results = styled.div`
+  height: 100%;
+`;
+
 export const Form = styled.form`
   margin-top: 20px;
   width: 100%;
