@@ -1,12 +1,20 @@
-import styled from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-const Container = styled.div`
-  flex-direction: column;
-  outline: 0;
-  background-color: #48285b;
-  height: 100%;
-  text-rendering: optimizeLegibility !important;
+export default createGlobalStyle`
+* {
+  margin:0;
+  padding:0;
+  outline:0;
+  box-sizing: border-box;
+
+}
+html, body, #root {
+  min-height: 100%;
+}
+body{
+  background:#48285b;
+  /* text-rendering: optimizeLegibility !important; */
   -webkit-font-smoothing: antialiased !important;
   font-family: sans-serif;
+  }
 `;
-export default Container;

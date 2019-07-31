@@ -1,6 +1,5 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-// import tron from './config/ReactotronConfig';
 
 import reducers from './reducers';
 import sagas from './sagas';

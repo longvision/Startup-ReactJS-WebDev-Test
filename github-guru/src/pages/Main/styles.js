@@ -11,6 +11,7 @@ export const Container = styled.div`
 `;
 export const Logo = styled.img`
   height: 50px;
+  margin-bottom: 15px;
 `;
 export const Results = styled.div`
   height: 100%;
@@ -19,7 +20,7 @@ export const Results = styled.div`
 export const Form = styled.form`
   margin-top: 20px;
   width: 100%;
-  max-width: 400px;
+  max-width: 550px;
   display: flex;
 
   input {
@@ -31,13 +32,14 @@ export const Form = styled.form`
     color: #48285b;
     font-size: 18px;
     border-radius: 3px;
+    min-width: 300px;
   }
   button {
     height: 55px;
     padding: 0 20px;
     margin-left: 10px;
     background: #ffe162;
-    color: #fff;
+    color: #48285b;
     border: 0;
     font-size: 20px;
     font-weight: bold;

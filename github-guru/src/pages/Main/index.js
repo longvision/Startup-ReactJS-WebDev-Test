@@ -14,7 +14,6 @@ import * as RepoActions from '../../store/actions/repo';
 class Main extends Component {
   state = {
     repositoryInput: '',
-    // repositories: [],
     repository: null,
   };
 
@@ -35,7 +34,7 @@ class Main extends Component {
           <Form onSubmit={this.handleAddRepository}>
             <input
               type="text"
-              placeholder="type the username"
+              placeholder="Type your Git username..."
               value={this.state.repositoryInput}
               onChange={e => this.setState({ repositoryInput: e.target.value })}
             />

@@ -1,50 +1,45 @@
 import React, { Component } from 'react';
 // import logo from '../../assets/logo.png';
-import { Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
-  Container, Repository, Button, Card,
+  Container, Repository, Button, Card, Loading,
 } from './styles';
 
-// import * as RepoActions from '../../store/actions/repo';
+import * as CommitsActions from '../../store/actions/commits';
 
 class List extends Component {
-  componentDidMount = async () => {
-    // try {
-    //   const { repositoryInput, addRepoRequest } = this.props;
-    //   await addRepoRequest(repositoryInput);
-    // } catch (err) {
-    //   alert('Please type your username');
-    //   console.log(err);
-    // }
+  state = { toCommits: false, full_name: '' };
+
+  openCommits = (rep) => {
+    const { loadCommitsRequest } = this.props;
+
+    loadCommitsRequest(rep.full_name);
   };
 
   render() {
     const { repo } = this.props;
+    // const { full_name } = this.state;
 
+    // if (this.state.toCommits === true) {
+    //   return <Redirect to={`/repos/${full_name}/commits/`} />;
+    // }
     return (
       <Container>
-        {repo.loading && <span> Carregando...</span>}
+        {repo.loading && <Loading> Carregando...</Loading>}
         <ul>
-          {repo.data.map(repo => (
-            <Card>
-              <Repository key={repo.id}>
+          {repo.data.map(rep => (
+            <Card key={rep.id}>
+              <Repository>
                 <header>
-                  {/* <img src={repo.owner.avatar_url} alt="avatar" /> */}
-                  <strong>{repo.name}</strong>
-                  <small>{repo.description}</small>
+                  <img src={rep.owner.avatar_url} alt="avatar" />
+                  <strong>{rep.login}</strong>
+                  <strong>{rep.name}</strong>
+                  <small>{rep.description}</small>
                 </header>
               </Repository>
-              <Button>
-                {/* <Link
-                  to={{
-                    pathname: `/commits/${rep.id}`,
-                  }}
-                >
-                  Commits
-                </Link> */}
-              </Button>
+              <Button onClick={() => this.openCommits(rep)}>Commits</Button>
             </Card>
           ))}
         </ul>
@@ -53,13 +48,14 @@ class List extends Component {
   }
 }
 
-// const mapDispatchToProps = dispatch => bindActionCreators(RepoActions, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators(CommitsActions, dispatch);
 
 const mapStateToProps = state => ({
   repo: state.repo,
+  commits: state.commits,
 });
 
 export default connect(
   mapStateToProps,
-  // mapDispatchToProps,
+  mapDispatchToProps,
 )(List);
