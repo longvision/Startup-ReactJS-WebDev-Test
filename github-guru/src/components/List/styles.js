@@ -25,6 +25,8 @@ export const Repository = styled.div`
     align-items: left;
     img {
       width: 64px;
+      border-width: 3px;
+      border-color: #48285b;
     }
     strong {
       font-size: 26px;

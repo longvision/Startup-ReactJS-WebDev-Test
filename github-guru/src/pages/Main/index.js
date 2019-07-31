@@ -7,24 +7,23 @@ import {
   Container, Form, Logo, Results,
 } from './styles';
 import List from '../../components/List';
-import Avatar from '../../components/Avatar';
 
 import * as RepoActions from '../../store/actions/repo';
 
 class Main extends Component {
   state = {
     repositoryInput: '',
-    repository: null,
   };
 
   handleAddRepository = async (e) => {
     e.preventDefault();
-    const { addRepoRequest } = this.props;
+    const { addRepoRequest, repo } = this.props;
+
     addRepoRequest(this.state.repositoryInput);
   };
 
   render() {
-    const { repository, repositoryInput } = this.state;
+    const { repositoryInput } = this.state;
     const { repo } = this.props;
     return (
       <Container>
@@ -41,7 +40,7 @@ class Main extends Component {
             <button type="submit">Check</button>
           </Form>
         </div>
-        {repository ? <Avatar repository={repository} /> : null}
+
         <Results>
           <List repositoryInput={repositoryInput} />
         </Results>
