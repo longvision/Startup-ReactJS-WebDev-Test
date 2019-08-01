@@ -19,7 +19,7 @@ Used ternary operators to avoid using _`if else`_ statements:
 {repo.loading && <Loading> Carregando...</Loading>}
 ```
 
-Also used Template Literals:
+Also used Template Literals and Generators:
 
 ```
 export function* listCommits(action) {
