@@ -3,10 +3,12 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  flex: 1;
   align-items: center;
   padding-top: 60px;
   height: 100%;
   min-height: 1020px;
+
   /* background: #fff; */
 `;
 export const Ul = styled.ul`
@@ -32,20 +34,16 @@ export const SearchBox = styled.div`
   height: 55px;
   background-color: #f2f2f2;
 
-  height: 55px;
-
   margin-top: 20px;
   width: 100%;
   max-width: 400px;
-  display: flex;
 `;
 export const SearchInput = styled.input`
-  flex: 1;
-
-  padding: 0 20px;
+  /* flex: 1;
+  padding: 0 20px; */
   background: #fff;
-  border: 0;
-  color: #48285b;
+
+  /* color: #48285b; */
   font-size: 18px;
   border-radius: 3px;
 `;
@@ -56,7 +54,7 @@ export const Card = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 90%;
+  width: 100%;
 `;
 export const Logo = styled.img`
   height: 50px;
@@ -67,11 +65,21 @@ export const Results = styled.div`
 `;
 
 export const Form = styled.form`
+  /* margin-top: 20px;
+  width: 100%;
+   max-width: 400px; */
+  display: flex;
+  /* flex: 1; */
+  flex-direction: row;
+
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  height: 55px;
+
   margin-top: 20px;
   width: 100%;
   max-width: 400px;
-  display: flex;
-
   input {
     flex: 1;
     height: 55px;
@@ -107,6 +115,7 @@ export const Repository = styled.div`
   display: flex;
   flex-direction: column;
   margin: 15px;
+  flex: 1;
 
   /* padding: 10px; */
   h1 {
@@ -120,12 +129,13 @@ export const Repository = styled.div`
       margin: 35px;
       font-size: 44px;
     }
+    img {
+      width: 100px;
+      border-radius: 100%;
+      margin: 25px;
+    }
   }
-  img {
-    width: 100px;
-    border-radius: 100%;
-    margin: 25px;
-  }
+
   header {
     padding: 13px;
     font-size: 24px;

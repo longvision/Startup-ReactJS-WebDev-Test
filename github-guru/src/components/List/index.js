@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 // import logo from '../../assets/logo.png';
 import { Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
-  Container, Repository, Button, Card, Loading,
+  Item, Repository, Button, Card, Loading,
 } from './styles';
 
 import * as CommitsActions from '../../store/actions/commits';
@@ -26,14 +26,14 @@ class List extends Component {
     //   return <Redirect to={`/repos/${full_name}/commits/`} />;
     // }
     return (
-      <Container>
+      <Fragment>
         {repo.loading && <Loading> Carregando...</Loading>}
-        <ul>
+        <Item>
           {repo.data.map(rep => (
             <Card key={rep.id}>
               <Repository>
+                <img src={rep.owner.avatar_url} alt="avatar" />
                 <header>
-                  <img src={rep.owner.avatar_url} alt="avatar" />
                   <strong>{rep.login}</strong>
                   <strong>{rep.name}</strong>
                   <small>{rep.description}</small>
@@ -42,8 +42,8 @@ class List extends Component {
               <Button onClick={() => this.openCommits(rep)}>Commits</Button>
             </Card>
           ))}
-        </ul>
-      </Container>
+        </Item>
+      </Fragment>
     );
   }
 }

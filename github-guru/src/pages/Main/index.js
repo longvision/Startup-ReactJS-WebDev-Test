@@ -40,10 +40,7 @@ class Main extends Component {
             <button type="submit">Check</button>
           </Form>
         </div>
-
-        <Results>
-          <List repositoryInput={repositoryInput} />
-        </Results>
+        <List repositoryInput={repositoryInput} />
       </Container>
     );
   }

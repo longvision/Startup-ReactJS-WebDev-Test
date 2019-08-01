@@ -8,10 +8,11 @@ export const Container = styled.div`
   height: 100%;
   min-height: 1020px;
   background-color: #48285b;
+  flex: 1;
 `;
 export const Logo = styled.img`
-  height: 50px;
-  margin-bottom: 15px;
+  height: 64px;
+  margin-bottom: 1px;
 `;
 export const Results = styled.div`
   height: 100%;
@@ -21,7 +22,7 @@ export const Form = styled.form`
   margin-top: 20px;
   width: 100%;
   max-width: 550px;
-  display: flex;
+  /* display: flex; */
 
   input {
     flex: 1;
@@ -44,7 +45,7 @@ export const Form = styled.form`
     font-size: 20px;
     font-weight: bold;
     border-radius: 3px;
-
+    flex: 1;
     &:hover {
       background: #fff111;
     }

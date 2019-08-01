@@ -18,7 +18,7 @@ import {
 import logo from '../../assets/logo.png';
 import avatar from '../../assets/avatar.png';
 import * as CommitsActions from '../../store/actions/commits';
-import SearchBar from '../SearchBar';
+// import SearchBar from '../SearchBar';
 
 class Commits extends Component {
   state = {
@@ -59,7 +59,6 @@ class Commits extends Component {
             placeholder="Filter by commit message..."
             onChange={this.filterList}
           />
-
           <button type="submit">Filter</button>
         </Form>
         {items.slice(0, 20).map(item => (
