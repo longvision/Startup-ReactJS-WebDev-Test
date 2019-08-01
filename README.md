@@ -70,7 +70,7 @@ The logo was also my creation too :).
 
 ## Tests and TDD
 
-I didn't created any tests to develop this app.
+I didn't create any tests to develop this app.
 All tests were done by using the app live, with react's consoles browser's alerts.
 The tests functionality is available but no tests are written.
 To test redux and track the state changes I used the Reactotron to log and show Redux's changes.
