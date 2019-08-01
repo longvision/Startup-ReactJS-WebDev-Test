@@ -28,10 +28,12 @@ export const Repository = styled.div`
     strong {
       font-size: 26px;
       color: #000;
+      max-width: 750px;
     }
     small {
       font-size: 19px;
       color: #666;
+      width: 750px;
     }
   }
   img {
@@ -44,6 +46,7 @@ export const Repository = styled.div`
 export const Loading = styled.span`
   color: #ffe160;
   font-size: 20px;
+  padding-top: 20px;
 `;
 
 export const Card = styled.div`
@@ -64,9 +67,7 @@ export const Item = styled.ul`
   margin: 25px;
   padding: 25px;
 `;
-export const Logo = styled.img`
-  height: 50px;
-`;
+
 export const Results = styled.div`
   height: 100%;
 `;

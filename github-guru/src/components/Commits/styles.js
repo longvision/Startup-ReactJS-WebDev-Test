@@ -57,8 +57,8 @@ export const Card = styled.div`
   width: 100%;
 `;
 export const Logo = styled.img`
-  height: 50px;
-  margin-bottom: 15px;
+  height: 250px;
+  /* margin-bottom: 15px; */
 `;
 export const Results = styled.div`
   height: 100%;
@@ -131,6 +131,9 @@ export const Repository = styled.div`
     }
     img {
       width: 100px;
+      height: 100px;
+      max-width: 125px;
+      max-width: 125px;
       border-radius: 100%;
       margin: 25px;
     }

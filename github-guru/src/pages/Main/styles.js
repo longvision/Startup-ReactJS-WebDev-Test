@@ -11,7 +11,7 @@ export const Container = styled.div`
   flex: 1;
 `;
 export const Logo = styled.img`
-  height: 64px;
+  height: 250px;
   margin-bottom: 1px;
 `;
 export const Results = styled.div`
