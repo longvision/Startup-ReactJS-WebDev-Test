@@ -15,7 +15,7 @@ class Main extends Component {
     repositoryInput: '',
   };
 
-  handleAddRepository = async (e) => {
+  handleAddRepository = (e) => {
     e.preventDefault();
     const { addRepoRequest, repo } = this.props;
 

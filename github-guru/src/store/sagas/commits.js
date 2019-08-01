@@ -8,9 +8,7 @@ import { loadCommitsSuccess } from '../actions/commits';
 export function* listCommits(action) {
   try {
     // Primeiro parametro da call vem a api, no segundo parametro vem o restante da requisição.
-
     const response = yield call(api.get, `/repos/${action.payload.full_name}/commits`);
-
     yield put(loadCommitsSuccess(response.data));
     history.push('/commits');
     console.tron.log('sucesso');

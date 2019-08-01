@@ -31,7 +31,7 @@ class List extends Component {
         {repo.loading && <Loading> Carregando...</Loading>}
         <Item>
           {repo.data.map(rep => (
-            <Card key={rep.id}>
+            <Card key={rep.id} data-testid="repo-list">
               <Repository>
                 <img src={rep.owner.avatar_url} alt="avatar" />
                 <header>
