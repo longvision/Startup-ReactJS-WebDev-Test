@@ -23,7 +23,8 @@ export const Ul = styled.ul`
 `;
 export const Title = styled.h1`
   color: #fff;
-  font-size: 18px;
+  font-size: 22px;
+  margin-top: 15px;
 `;
 export const SearchBox = styled.div`
   background: #fbfbfb;
@@ -64,7 +65,7 @@ export const Results = styled.div`
   height: 100%;
 `;
 
-export const Form = styled.form`
+export const CommitList = styled.form`
   /* margin-top: 20px;
   width: 100%;
    max-width: 400px; */
@@ -109,7 +110,7 @@ export const Form = styled.form`
 `;
 
 export const Repository = styled.div`
-  width: 90%;
+  max-width: 750px;
   background: #fff;
   border-radius: 3px;
   display: flex;
@@ -126,8 +127,10 @@ export const Repository = styled.div`
     display: flex;
 
     h2 {
-      margin: 35px;
+      padding: 40px;
       font-size: 44px;
+      justify-content: center;
+      align-items: center;
     }
     img {
       width: 100px;
@@ -155,6 +158,6 @@ export const Repository = styled.div`
     color: #c66;
   }
   h2 {
-    margin: 0 25px 25px;
+    margin: 0 25px 15px;
   }
 `;

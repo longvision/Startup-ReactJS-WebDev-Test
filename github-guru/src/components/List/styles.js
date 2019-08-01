@@ -33,7 +33,7 @@ export const Repository = styled.div`
     small {
       font-size: 19px;
       color: #666;
-      width: 750px;
+      max-width: 750px;
     }
   }
   img {

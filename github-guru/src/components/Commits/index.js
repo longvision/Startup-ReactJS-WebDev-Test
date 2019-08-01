@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import moment from 'moment-timezone';
 import {
   Container,
   List,
   Ul,
   Card,
   Logo,
-  Form,
+  CommitList,
   SearchInput,
   SearchBox,
   Title,
@@ -18,7 +19,6 @@ import {
 import logo from '../../assets/logo.png';
 import avatar from '../../assets/avatar.png';
 import * as CommitsActions from '../../store/actions/commits';
-// import SearchBar from '../SearchBar';
 
 class Commits extends Component {
   state = {
@@ -46,13 +46,12 @@ class Commits extends Component {
   }
 
   render() {
-    const { repo } = this.props;
     const { items } = this.state;
     console.log(items);
     return (
       <Container>
         <Logo src={logo} alt="Github Guru" />
-        <Form>
+        <CommitList>
           <SearchInput
             type="text"
             className="form-control form-control-lg"
@@ -60,7 +59,8 @@ class Commits extends Component {
             onChange={this.filterList}
           />
           <button type="submit">Filter</button>
-        </Form>
+        </CommitList>
+        <Title>Last 20 commits below:</Title>
         {items.slice(0, 20).map(item => (
           <Card key={item.sha}>
             <Repository>
@@ -78,8 +78,8 @@ class Commits extends Component {
               </h2>
 
               <h2>
-                Commited at:
-                <small>{item.commit.author.date}</small>
+                Last Commit:
+                <small>{moment(item.commit.author.date).fromNow()}</small>
               </h2>
             </Repository>
           </Card>
