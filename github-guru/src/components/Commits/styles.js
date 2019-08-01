@@ -122,6 +122,7 @@ export const Repository = styled.div`
   h1 {
     font-size: 28px;
   }
+
   div {
     flex-direction: row;
     display: flex;
@@ -132,11 +133,12 @@ export const Repository = styled.div`
       justify-content: center;
       align-items: center;
     }
+
     img {
       width: 100px;
       height: 100px;
-      max-width: 125px;
-      max-width: 125px;
+      min-width: 125px;
+      min-width: 125px;
       border-radius: 100%;
       margin: 25px;
     }

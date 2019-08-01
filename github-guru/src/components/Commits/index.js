@@ -23,6 +23,7 @@ import * as CommitsActions from '../../store/actions/commits';
 class Commits extends Component {
   state = {
     items: [],
+    search: '',
   };
 
   filterList = (event) => {
@@ -31,7 +32,7 @@ class Commits extends Component {
     updatedList = commits.data.filter(
       c => c.commit.message.toLowerCase().search(event.target.value.toLowerCase()) !== -1,
     );
-    this.setState({ items: updatedList, inputField: 'filled' });
+    this.setState({ items: updatedList, search: event.target.value });
   };
 
   componentDidMount = () => {
@@ -46,7 +47,7 @@ class Commits extends Component {
   }
 
   render() {
-    const { items } = this.state;
+    const { items, search } = this.state;
     console.log(items);
     return (
       <Container>
@@ -60,7 +61,11 @@ class Commits extends Component {
           />
           <button type="submit">Filter</button>
         </CommitList>
-        <Title>Last 20 commits below:</Title>
+        {search === '' ? (
+          <Title>Last 20 commits:</Title>
+        ) : (
+          <Title>All commits with '{search}' will appear below:</Title>
+        )}
         {items.slice(0, 20).map(item => (
           <Card key={item.sha}>
             <Repository>
