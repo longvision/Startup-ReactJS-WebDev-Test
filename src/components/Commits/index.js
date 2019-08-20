@@ -14,7 +14,7 @@ import {
   SearchBox,
   Title,
   Button,
-  Repository,
+  Repository
 } from './styles';
 import logo from '../../assets/logo.png';
 import avatar from '../../assets/avatar.png';
@@ -23,14 +23,17 @@ import * as CommitsActions from '../../store/actions/commits';
 class Commits extends Component {
   state = {
     items: [],
-    search: '',
+    search: ''
   };
 
-  filterList = (event) => {
+  filterList = event => {
     const { commits } = this.props;
     let updatedList = this.state.items;
     updatedList = commits.data.filter(
-      c => c.commit.message.toLowerCase().search(event.target.value.toLowerCase()) !== -1,
+      c =>
+        c.commit.message
+          .toLowerCase()
+          .search(event.target.value.toLowerCase()) !== -1
     );
     this.setState({ items: updatedList, search: event.target.value });
   };
@@ -48,7 +51,7 @@ class Commits extends Component {
 
   render() {
     const { items, search } = this.state;
-    console.log(items);
+    // console.log(items);
     return (
       <Container>
         <Logo src={logo} alt="Github Guru" />
@@ -98,10 +101,10 @@ class Commits extends Component {
 
 const mapStateToProps = state => ({
   repo: state.repo,
-  commits: state.commits,
+  commits: state.commits
 });
 
 export default connect(
-  mapStateToProps,
+  mapStateToProps
   // mapDispatchToProps,
 )(Commits);
