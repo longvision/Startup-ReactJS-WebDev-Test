@@ -7,12 +7,15 @@ import { addRepoSuccess } from '../actions/repo';
 export function* addRepo(action) {
   try {
     // Primeiro parametro da call vem a api, no segundo parametro vem o restante da requisição.
-    const { data } = yield call(api.get, `/users/${action.payload.repository}/repos?per_page=100`);
+    const { data } = yield call(
+      api.get,
+      `/users/${action.payload.repository}/repos?per_page=100`
+    );
 
     yield put(addRepoSuccess(data));
     // console.tron.log(repositoryData);
   } catch (err) {
     // yield put(loadFailure());
-    console.tron.log('error');
+    // console.tron.log('error');
   }
 }

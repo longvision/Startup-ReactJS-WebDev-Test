@@ -9,7 +9,7 @@ import Routes from './routes';
 import './config/ReactotronConfig';
 import GlobalStyle from './styles/global';
 
-console.tron.log('testando');
+// console.tron.log('testando');
 
 export default class App extends Component {
   render() {

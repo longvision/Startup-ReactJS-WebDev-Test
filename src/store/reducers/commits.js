@@ -2,7 +2,7 @@ import { LOAD_COMMITS_REQUEST, LOAD_COMMITS_SUCCESS } from '../actions/commits';
 
 const INITIAL_STATE = {
   data: [],
-  loading: false,
+  loading: false
 };
 
 export default function commits(state = INITIAL_STATE, action) {
@@ -15,4 +15,4 @@ export default function commits(state = INITIAL_STATE, action) {
       return state;
   }
 }
-console.tron.log(commits);
+// console.tron.log(commits);

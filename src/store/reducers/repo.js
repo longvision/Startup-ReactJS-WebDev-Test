@@ -2,7 +2,7 @@ import { LOAD_REQUEST, LOAD_SUCCESS } from '../actions/repo';
 
 const INITIAL_STATE = {
   data: [],
-  loading: false,
+  loading: false
 };
 
 export default function repo(state = INITIAL_STATE, action) {
@@ -15,4 +15,4 @@ export default function repo(state = INITIAL_STATE, action) {
       return state;
   }
 }
-console.log('teste');
+// console.log('teste');
