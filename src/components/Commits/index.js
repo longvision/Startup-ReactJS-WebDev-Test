@@ -51,7 +51,7 @@ class Commits extends Component {
 
   render() {
     const { items, search } = this.state;
-    // console.log(items);
+
     return (
       <Container>
         <Logo src={logo} alt="Github Guru" />

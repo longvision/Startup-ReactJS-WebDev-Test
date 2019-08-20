@@ -15,4 +15,3 @@ export default function repo(state = INITIAL_STATE, action) {
       return state;
   }
 }
-// console.log('teste');

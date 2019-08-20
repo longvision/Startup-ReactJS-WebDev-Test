@@ -15,4 +15,3 @@ export default function commits(state = INITIAL_STATE, action) {
       return state;
   }
 }
-// console.tron.log(commits);
